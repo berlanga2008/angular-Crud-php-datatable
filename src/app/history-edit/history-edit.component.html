@@ -1,0 +1,19 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+
+    <h3 class="mb-3 text-center">Actualizar historial</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="historialData.id" class="form-control" placeholder="id">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="historialData.nombre" class="form-control" placeholder="nombre">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="historialData.datos" class="form-control" placeholder="datos">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateHistory()">Actualizar historial</button>
+    </div>
+
+  </div>
+</div>

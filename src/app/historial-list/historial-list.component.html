@@ -1,0 +1,38 @@
+<div class="container custom-container-2">
+    <!-- Show it when there is no historial -->
+    <div class="no-data text-center" *ngIf="Historial.length == 0">
+      <p>There is no historial added yet!</p>
+     <!-- <button class="btn btn-outline-primary" routerLink="/create-historial">
+        Add Historial
+      </button> -->
+    </div>
+    <!-- Historials list table, it hides when there is no historial -->
+    <div *ngIf="Historial.length !== 0">
+      <h3 class="mb-3 text-center">Historials List</h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Datos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let historial of Historial">
+              <td>{{ historial.id  }}</td>
+              <td>{{ historial.nombre }}</td>
+              <td>{{ historial.datos }}</td>
+              <td>
+                <a class="edit" routerLink="/history-edit/{{ historial.id }}"
+                  >Edit</a>
+            <!--   <span class="delete" (click)="deleteHistory(historial.id)"
+                  >Delete</span
+                >-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
