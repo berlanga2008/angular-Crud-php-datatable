@@ -3,13 +3,13 @@
 
     <h3 class="mb-3 text-center">Actualizar historial</h3>
     <div class="form-group">
-      <input type="text" [(ngModel)]="historialData.id" class="form-control" placeholder="id">
+      <input type="text" [(ngModel)]="historialData[0].id" class="form-control" placeholder="id">
     </div>
     <div class="form-group">
-      <input type="text" [(ngModel)]="historialData.nombre" class="form-control" placeholder="nombre">
+      <input type="text" [(ngModel)]="historialData[0].nombre" class="form-control" placeholder="nombre">
     </div>
     <div class="form-group">
-      <input type="text" [(ngModel)]="historialData.datos" class="form-control" placeholder="datos">
+      <input type="text" [(ngModel)]="historialData[0].datos" class="form-control" placeholder="datos">
     </div>
     <div class="form-group">
       <button class="btn btn-success btn-lg btn-block" (click)="updateHistory()">Actualizar historial</button>

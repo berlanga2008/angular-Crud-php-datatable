@@ -20,6 +20,7 @@ export class HistoryEditComponent implements OnInit {
   ngOnInit() {
     this.restApi.getHistorial(this.id).subscribe((data: {}) => {
       this.historialData = data;
+      console.log(this.historialData);
     })
   }
   // Update employee data
