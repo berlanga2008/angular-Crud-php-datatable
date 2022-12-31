@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TryArrayPipe } from './try-array.pipe';
 import { HistoryEditComponent } from './history-edit/history-edit.component';
 import { FormsModule } from '@angular/forms';
-
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

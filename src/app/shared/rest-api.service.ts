@@ -23,9 +23,9 @@ export class RestApiService {
     }),
   };
   // HttpClient API get() method => Fetch historial list
-  getHistorials(): Observable<Historial> {
+  getHistorials() {
     return this.http
-      .get<Historial>(this.apiURL + '/restLog.php')
+      .get<Historial[]>(this.apiURL + '/restLog.php')
       .pipe(retry(1), catchError(this.handleError));
   }
   // HttpClient API get() method => Fetch employee
