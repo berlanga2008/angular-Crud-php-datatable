@@ -14,7 +14,7 @@
           <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">Nombre</th>
+              <th scope="col">Empresa</th>
               <th scope="col">Datos</th>
               <th scope="col">Acciones</th>
             </tr>
@@ -25,11 +25,8 @@
               <td>{{ historial.nombre }}</td>
               <td>{{ historial.datos }}</td>
               <td>
-                <a class="edit" routerLink="/history-edit/{{ historial.id }}"
-                  >Edit</a>
-            <!--   <span class="delete" (click)="deleteHistory(historial.id)"
-                  >Delete</span
-                >-->
+                <a class="edit" routerLink="/history-edit/{{ historial.id }}" class="btn btn-primary">Editar</a>
+                <a class="delete" (click)="deleteHistorial(historial.id)" class="btn btn-danger">Eliminar</a>
               </td>
             </tr>
           </tbody>

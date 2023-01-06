@@ -9,6 +9,7 @@ import { TryArrayPipe } from './try-array.pipe';
 import { HistoryEditComponent } from './history-edit/history-edit.component';
 import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DataTablesModule } from 'angular-datatables';
     HistorialListComponent,
     TryArrayPipe,
     HistoryEditComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

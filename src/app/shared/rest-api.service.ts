@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵAPP_ID_RANDOM_PROVIDER } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Historial } from '../shared/historial';
 import { Observable, throwError } from 'rxjs';
@@ -20,12 +20,13 @@ export class RestApiService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
     }),
   };
   // HttpClient API get() method => Fetch historial list
   getHistorials() {
     return this.http
-      .get<Historial[]>(this.apiURL + '/restLog.php')
+      .get<Historial[]>(this.apiURL + '/restLog.php?' + new Date())
       .pipe(retry(1), catchError(this.handleError));
   }
   // HttpClient API get() method => Fetch employee
@@ -57,7 +58,10 @@ export class RestApiService {
   // HttpClient API delete() method => Delete employee
   deleteHistorial(id: any) {
     return this.http
-      .delete<Historial>(this.apiURL + '/historial/' + id, this.httpOptions)
+      .delete<Historial>(
+        this.apiURL + '/historial/' + id,
+        this.httpOptions
+        )
       .pipe(retry(1), catchError(this.handleError));
   }
   // Error handling

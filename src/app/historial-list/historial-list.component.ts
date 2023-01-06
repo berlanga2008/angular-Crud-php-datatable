@@ -20,9 +20,9 @@ export class HistorialListComponent implements OnInit {
     this.dtoptions = {
       pagingType: 'full_numbers',
       searching:true,
-    //  paging:false
-    lengthChange:false,
-    };
+      pageLength: 30,
+      lengthChange:false,
+  };
     this.loadHistorials();
   }
   // Get historials list
