@@ -26,7 +26,7 @@ export class RestApiService {
   // HttpClient API get() method => Fetch historial list
   getHistorials() {
     return this.http
-      .get<Historial[]>(this.apiURL + '/restLog.php?' + new Date())
+      .get<Historial[]>(this.apiURL + '/pedidos.php' ) //?' + new Date()) data always update
       .pipe(retry(1), catchError(this.handleError));
   }
   // HttpClient API get() method => Fetch employee

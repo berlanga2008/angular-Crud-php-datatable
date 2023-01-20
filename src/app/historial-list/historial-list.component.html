@@ -1,33 +1,48 @@
 <div class="container custom-container-2">
     <!-- Show it when there is no historial -->
     <div class="no-data text-center" *ngIf="historialsHeader == 0">
-      <p>Todavía no se ha añadido nada</p>
+      <p>Todavía no hay pedidos</p>
      <!-- <button class="btn btn-outline-primary" routerLink="/create-historial">
         Add Historial
       </button> -->
     </div>
-    <!-- Historials list table, it hides when there is no historial -->
+    <!-- Historials
+          $response[$i]['order_id'] = $row['order_id'];
+      $response[$i]['post_date'] = $row['post_date'];
+      $response[$i]['billing_email'] = $row['billing_email'];
+      $response[$i]['_billing_first_name'] = $row['_billing_first_name'];
+      $response[$i]['_billing_last_name'] = $row['_billing_last_name'];
+      $response[$i]['order_total'] = $row['order_total'];
+      $response[$i]['order_items'] = $row['order_items'];
+    -->
     <div *ngIf="historialsHeader !== 0">
-      <h3 class="mb-3 text-center">Historial</h3>
+      <h3 class="mb-3 text-center">Pedidos</h3>
       <div class="col-md-12">
         <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Empresa</th>
-              <th scope="col">Datos</th>
-              <th scope="col">Acciones</th>
+              <th scope="col">order_id</th>
+              <th scope="col">post_date</th>
+              <th scope="col">billing_email</th>
+              <th scope="col">_billing_first_name</th>
+              <th scope="col">_billing_last_name</th>
+              <th scope="col">order_total</th>
+              <th scope="col">order_items</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let historial of historialsHeader">
-              <td>{{ historial.id  }}</td>
-              <td>{{ historial.nombre }}</td>
-              <td>{{ historial.datos }}</td>
-              <td>
-                <a class="edit" routerLink="/history-edit/{{ historial.id }}" class="btn btn-primary">Editar</a>
+              <td>{{ historial.order_id  }}</td>
+              <td>{{ historial.post_date }}</td>
+              <td>{{ historial.billing_email }}</td>
+              <td>{{ historial._billing_first_name  }}</td>
+              <td>{{ historial._billing_last_name }}</td>
+              <td>{{ historial.order_total }}</td>
+              <td>{{ historial.order_items }}</td>
+             <!--  <td>
+               <a class="edit" routerLink="/history-edit/{{ historial.id }}" class="btn btn-primary">Editar</a>
                 <a class="delete" (click)="deleteHistorial(historial.id)" class="btn btn-danger">Eliminar</a>
-              </td>
+              </td>-->
             </tr>
           </tbody>
         </table>
