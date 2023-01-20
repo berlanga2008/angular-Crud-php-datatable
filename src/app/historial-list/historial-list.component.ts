@@ -10,9 +10,10 @@ import { Subject } from 'rxjs';
 })
 export class HistorialListComponent implements OnInit {
   public historials: any;
-  public dtoptions: DataTables.Settings = {};
+ // public dtoptions: DataTables.Settings = {};
   public dtTrigger:Subject<any>=new Subject<any>();
   public historialsHeader :any;
+  public dtoptions: any = {};
 
   constructor(public restApi: RestApiService) {}
 
@@ -22,6 +23,10 @@ export class HistorialListComponent implements OnInit {
       searching:true,
       pageLength: 30,
       lengthChange:false,
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'print', 'csv','columnsToggle','colvis','pdf','excel'],
+
   };
     this.loadHistorials();
   }

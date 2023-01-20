@@ -1,4 +1,5 @@
 <div class="container custom-container-2">
+  <spinner></spinner>
     <!-- Show it when there is no historial -->
     <div class="no-data text-center" *ngIf="historialsHeader == 0">
       <p>Todavía no hay pedidos</p>
@@ -16,6 +17,7 @@
       $response[$i]['order_items'] = $row['order_items'];
     -->
     <div *ngIf="historialsHeader !== 0">
+
       <h3 class="mb-3 text-center">Pedidos</h3>
       <div class="col-md-12">
         <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped">
