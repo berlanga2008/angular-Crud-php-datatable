@@ -11,6 +11,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { HeaderComponent } from './header/header.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerInterceptorService } from './services/spinner-interceptor.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SpinnerInterceptorService } from './services/spinner-interceptor.servic
     HistoryEditComponent,
     HeaderComponent,
     SpinnerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

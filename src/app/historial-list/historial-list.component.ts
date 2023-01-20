@@ -25,7 +25,13 @@ export class HistorialListComponent implements OnInit {
       lengthChange:false,
       dom: 'Bfrtip',
       buttons: [
-        'copy', 'print', 'csv','columnsToggle','colvis','pdf','excel'],
+      //  'copy',
+      //  'print',
+        'csv',
+       // 'columnsToggle',
+       // 'colvis',
+        'pdf',
+        'excel'],
 
   };
     this.loadHistorials();
